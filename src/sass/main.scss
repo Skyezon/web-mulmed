@@ -141,7 +141,7 @@ body{
     font-family: $font-primary;
     background-color: black;
     height: 100%;
-    z-index: -2;
+    z-index: -200;
 }
 
 .header{
@@ -173,6 +173,7 @@ body{
         justify-content: center;
         animation: noFade 2s;
         animation-iteration-count: infinite;
+        z-index: 100;
         &--item{
             position: relative;
             color: $color-white;
@@ -231,24 +232,42 @@ body{
 }
 
 .main{
-    height: 100vh;
-    padding: 5rem;
+    height: 300vh;
+    padding: 0rem;
     background-color: $color-black; //nanti diganti
     &__container{
         display: flex;
-        padding: 1rem;
+        padding: 0rem;
         color: $color-gray-light;
-        background-color: $color-rekomendasi-gray;  
-        border-radius: 2rem;
+        background-color: $color-black;  
         height: 85vh;
+        position: relative;
+        z-index: 0;
+        &::after{
+            content: "";
+            position: absolute;
+            top : 0;
+            left: 0;
+            background-color: $color-rekomendasi-gray;
+            width: 100%;
+            height: 100%;
+            transform: scale(0.9);
+            z-index: -1;
+            border-radius: 2rem;
+        }
     }
+
+
     &__poster{
-        margin: 5rem 10rem;
+        margin: 7rem 0rem;
+        margin-left : 20rem;
+        margin-right : 5rem;
         background-image: url(img/favicon.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         width: 30rem;
         height: 40rem;
+        z-index: 1;
     }
 
   
@@ -260,6 +279,7 @@ body{
     margin: 0.5rem 2rem;
     padding: 1rem 2rem;
     width: 50%;
+    z-index: 1;
     &__heading{
         margin: 1rem 2rem;
         margin-top: 10rem;
@@ -269,4 +289,28 @@ body{
         margin: 2rem;
         width: 100%;
     }
+}
+
+.film{
+    display: flex;
+    @include centerized-flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    &__heading{
+        margin-top: -5rem;
+        text-transform: uppercase;
+        margin-bottom: 5rem;
+    }
+
+    &__video{
+
+    }
+}
+
+.crew{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    @include centerized-flex
 }

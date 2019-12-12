@@ -3,6 +3,7 @@ import './main.css';
 import Atas from './component/atas';
 import Tengah from './component/tengah';
 import Navbar from './component/header/navbar';
+import Bawah from './component/bawah'
 
 const App = () => {
   return(
@@ -10,6 +11,7 @@ const App = () => {
       <Navbar />
       <Atas />
       <Tengah />
+      <Bawah />
     </div>
   )
 }

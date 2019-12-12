@@ -1,15 +1,14 @@
 import React from 'react'
+import Sinopsis from './main/sinopsis'
+import Film from './main/film'
+import Crew from './main/crew'
 
 const tengah = () =>{
     return(
     <main className='main'>
-        <section className='main__container'>
-        <img className='main__poster' src='../img/favicon.jpg' alt='poster'/>
-        <article className='article'>
-        <h3 className='article__heading'>Bawang putih dan Bawang merah</h3>
-        <p className='article__sinopsis'>nanti sinposis disni</p> 
-        </article>    
-        </section>
+    <Sinopsis />
+    <Film />
+    <Crew />
     </main>
 
 )}
