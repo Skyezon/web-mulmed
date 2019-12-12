@@ -150,10 +150,8 @@ body {
   flex-flow: column;
   margin: 0.5rem 2rem;
   padding: 1rem 2rem;
-  width: 50%;
-  background-color: blue; }
+  width: 50%; }
   .article__heading {
-    display: inline;
     margin: 1rem 2rem;
     margin-top: 10rem; }
   .article__sinopsis {
