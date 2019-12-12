@@ -1,0 +1,231 @@
+//variabel
+$color-primary : #0c359e;
+$color-secondary : #293;
+
+$color-white : white;
+$color-black : black;
+$color-gray-light : lighten(gray,50%);
+$color-gray-dark : darken(gray,50%);
+$color-gray-darkens : darken(gray,75%);
+$color-gray : gray;
+
+
+$font-primary : 'Lato';
+
+
+//variabel end
+
+//mixin
+
+@mixin centerized-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin backgroundImage($warna-awal,$warna-akhir,$opac,$image-path) {
+    background-image: linear-gradient(to bottom right, rgba($warna-awal,$opac),rgba($warna-akhir,$opac)),url($image-path);
+}
+
+@mixin backgroundOpacity($opac) {
+    background: rgba($color-black,$opac);
+}
+
+//endmix
+
+// function
+
+
+//end function
+
+//animation
+
+@keyframes noFade{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes moveInNav{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundAnimation{
+    0%{
+        // background-image: linear-gradient($color-black,$color-black);
+        opacity: 1;
+    }
+
+    12%{
+    //    @include backgroundImage($color-gray-dark, $color-gray-darkens,0.6,'img/fotojuanwithicebear.jpg');
+     background-image:  -webkit-linear-gradient(top, 
+      rgba(0,0,0,0.9) 0%, 
+      rgba(0,0,0,0) 20%,
+      rgba(0,0,0,0) 80%,
+      rgba(0,0,0,0.9) 100%
+    ),
+    -webkit-linear-gradient(left, 
+      rgba(0,0,0,0.9) 0%, 
+      rgba(0,0,0,0) 20%,
+      rgba(0,0,0,0) 80%,
+      rgba(0,0,0,0.9) 100%
+    ),url(img/fotojuanwithicebear.jpg);
+    opacity: 1;
+    }
+
+    25%{
+        opacity: 0;
+    }
+
+    37%{
+        @include backgroundImage($color-gray-dark, $color-gray-darkens,0.6,'img/foto3makhluk.jpg');
+        opacity: 1;
+    }
+
+    50%{
+        // background-image: linear-gradient($color-black,$color-black);
+        opacity: 0;
+    }
+
+    62%{
+        @include backgroundImage($color-gray-dark, $color-gray-darkens,0.6,'img/shelinexnadif.png');
+        opacity: 1;
+
+    }
+    75%{
+        // background-image: linear-gradient($color-black,$color-black);
+        opacity: 0;
+    }
+
+    87%{
+        @include backgroundImage($color-gray-dark, $color-gray-darkens,0.6,'img/aku.png');
+        opacity: 1;
+
+    }
+    100%{
+        // background-image: linear-gradient($color-black,$color-black);
+        opacity: 1;
+    }
+}
+
+//animation end
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: $font-primary;
+    background-color: black;
+    height: 100%;
+    z-index: -2;
+}
+
+.header{
+    height: 100vh;
+    background-color: $color-black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    line-height: 1.7;
+    animation-name: backgroundAnimation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &__navbar{
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        height: 8vh;
+        align-items: center;
+        background-color: $color-primary;
+        padding: 1.3rem;
+        justify-content: space-between;
+        animation: noFade 2s;
+        animation-iteration-count: infinite;
+        z-index: 100;
+        &--item{
+            position: relative;
+            color: $color-white;
+            margin: 0 2rem;
+            padding: 0.4rem 2rem;
+            // background-color: $color-secondary;
+            @include centerized-flex;
+            animation: moveInNav 5s;
+            text-decoration: none;
+        }
+
+        &--logo{
+            font-family: $font-primary + ' black';
+            transition: all 2s;
+            z-index: 2;
+            & > span{
+                text-transform: uppercase;
+                font-style: italic;
+                color: $color-gray-light;
+                letter-spacing: 1rem;
+            }
+            &:hover{
+                transform: skewY(2deg);
+
+            }
+        }
+    }
+    &__heading{
+        display: flex;
+        flex-flow: column nowrap;
+        height: 92vh;
+        color: white;
+        background-color: transparent;
+        @include centerized-flex;
+        text-transform: uppercase;
+        &--main{
+            letter-spacing: 20px;
+            font-weight: 700;
+        }
+
+        &--sub{
+            letter-spacing: 18px;
+            font-weight: 300;
+        }
+    }
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    background-color: white; //nanti diganti
+    &__poster{
+        margin: 1rem;
+    }
+
+    &__heading{
+        margin: 1rem;
+    }
+
+    &__sinopsis{
+        margin: 1rem;
+    }
+}

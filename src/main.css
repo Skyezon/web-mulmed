@@ -1,0 +1,128 @@
+@keyframes noFade {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 1; } }
+
+@keyframes moveInNav {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes backgroundAnimation {
+  0% {
+    opacity: 1; }
+  12% {
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(img/fotojuanwithicebear.jpg);
+    opacity: 1; }
+  25% {
+    opacity: 0; }
+  37% {
+    background-image: linear-gradient(to bottom right, rgba(1, 1, 1, 0.6), rgba(0, 0, 0, 0.6)), url("img/foto3makhluk.jpg");
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  62% {
+    background-image: linear-gradient(to bottom right, rgba(1, 1, 1, 0.6), rgba(0, 0, 0, 0.6)), url("img/shelinexnadif.png");
+    opacity: 1; }
+  75% {
+    opacity: 0; }
+  87% {
+    background-image: linear-gradient(to bottom right, rgba(1, 1, 1, 0.6), rgba(0, 0, 0, 0.6)), url("img/aku.png");
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  font-family: "Lato";
+  background-color: black;
+  height: 100%;
+  z-index: -2; }
+
+.header {
+  height: 100vh;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  line-height: 1.7;
+  animation-name: backgroundAnimation;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .header__navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    align-items: center;
+    background-color: #0c359e;
+    padding: 1.3rem;
+    justify-content: space-between;
+    animation: noFade 2s;
+    animation-iteration-count: infinite;
+    z-index: 100; }
+    .header__navbar--item {
+      position: relative;
+      color: white;
+      margin: 0 2rem;
+      padding: 0.4rem 2rem;
+      justify-content: center;
+      align-items: center;
+      animation: moveInNav 5s;
+      text-decoration: none; }
+    .header__navbar--logo {
+      font-family: "Lato black";
+      transition: all 2s;
+      z-index: 2; }
+      .header__navbar--logo > span {
+        text-transform: uppercase;
+        font-style: italic;
+        color: white;
+        letter-spacing: 1rem; }
+      .header__navbar--logo:hover {
+        transform: skewY(2deg); }
+  .header__heading {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 92vh;
+    color: white;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase; }
+    .header__heading--main {
+      letter-spacing: 20px;
+      font-weight: 700; }
+    .header__heading--sub {
+      letter-spacing: 18px;
+      font-weight: 300; }
+
+.main {
+  height: 100vh;
+  display: flex;
+  background-color: white; }
+  .main__poster {
+    margin: 1rem; }
+  .main__heading {
+    margin: 1rem; }
+  .main__sinopsis {
+    margin: 1rem; }
