@@ -3,9 +3,13 @@ import React from 'react'
 const tengah = () =>{
     return(
     <main className='main'>
-        <img className='main__poster' src='hello.jpg' alt='poster'/>
-        <h3 className='main__heading'>Bawang putih dan Bawang merah</h3>
-        <p className='main__sinopsis'>nanti sinposis disni</p> 
+        <section className='main__container'>
+        <img className='main__poster' src='../img/favicon.jpg' alt='poster'/>
+        <article className='article'>
+        <h3 className='article__heading'>Bawang putih dan Bawang merah</h3>
+        <p className='article__sinopsis'>nanti sinposis disni</p> 
+        </article>    
+        </section>
     </main>
 
 )}

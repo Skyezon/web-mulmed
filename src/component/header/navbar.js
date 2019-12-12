@@ -1,4 +1,5 @@
 import React from 'react'
+import polar from '../../img/polar-bear.png'
 
 const isi = ['Home','Sinopsis','Film','Crew']
 
@@ -12,7 +13,8 @@ return (<div className='header__navbar--list'>{navbarRes}</div>);
 const LogoGen = () => {
     return(
         <div className='header__navbar--logo'>
-            <span>Kelompok IceBear</span>
+            <img src={polar} alt='ice-bear' />
+            <span>Ice bear</span>
         </div>
     )
 }
