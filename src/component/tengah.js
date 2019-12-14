@@ -2,6 +2,7 @@ import React from 'react'
 import Sinopsis from './main/sinopsis'
 import Film from './main/film'
 import Crew from './main/crew'
+import Bawah from './bawah'
 
 const tengah = () =>{
     return(
@@ -9,6 +10,7 @@ const tengah = () =>{
     <Sinopsis />
     <Film />
     <Crew />
+    <Bawah />
     </main>
 
 )}

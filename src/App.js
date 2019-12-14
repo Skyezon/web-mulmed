@@ -7,11 +7,10 @@ import Bawah from './component/bawah'
 
 const App = () => {
   return(
-    <div>
+    <div className="wrapper">
       <Navbar />
       <Atas />
       <Tengah />
-      <Bawah />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import polar from '../../img/polar-bear.png'
+import LogoGen from './logoGen'
 
 const isi = ['Home','Sinopsis','Film','Crew']
 
@@ -10,14 +10,7 @@ const NavbarGen = () => {
 return (<div className='header__navbar--list'>{navbarRes}</div>);
 }
 
-const LogoGen = () => {
-    return(
-        <div className='header__navbar--logo'>
-            <img src={polar} alt='ice-bear' />
-            <span>Ice bear</span>
-        </div>
-    )
-}
+
 
 function navbar(){
     return(
