@@ -46,9 +46,57 @@ $font-primary : 'Lato';
 
 //animation
 
+@keyframes moveInLeft{
+    0%{
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInUp{
+    0%{
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInDown{
+    0%{
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @keyframes moveInNav{
     0%{
-        transform: translateY(-100px);
+        transform: translateX(-200rem);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        transform: translateX(2rem);
         opacity: 0;
     }
 
@@ -125,6 +173,7 @@ $font-primary : 'Lato';
 
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -174,10 +223,20 @@ body{
             color: $color-white;
             margin: 0 1rem;
             padding: 0.4rem 1rem;
+            text-transform: uppercase;
+            letter-spacing: .5rem;
+            font-weight: 400;
             // background-color: $color-secondary;
             @include centerized-flex;
             animation: moveInNav 5s;
             text-decoration: none;
+            transition: all 2s;
+            border-radius: 200px;
+
+            &:hover{
+                background-color: $color-gray-light;
+                box-shadow: 1rem 2rem 2rem .1rem $color-black;
+            }
         }
 
         &--logo{
@@ -218,9 +277,14 @@ body{
         }
 
         &--sub{
-            letter-spacing: 18px;
+            letter-spacing: 2rem;
             font-weight: 300;
             margin: 1rem;
+        }
+
+        &--cast{
+            display: flex;
+            @include centerized-flex;
         }
     }
 }
@@ -229,6 +293,7 @@ body{
     height: 255vh;
     padding: 3rem 0;
     background-color: $color-black; //nanti diganti
+    position: relative;
     &__container{
         display: flex;
         padding: 0rem;
@@ -270,19 +335,23 @@ body{
 .article{
     display: flex;
     flex-flow: column;
-    margin: 0.5rem 2rem;
-    padding: 1rem 2rem;
-    width: 50%;
+    @include centerized-flex;
+    width: 100%;
     z-index: 1;
     &__heading{
-        margin: 1rem 2rem;
-        margin-top: 10rem;
+        padding: 2.5rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        animation: moveInLeft 2s;
     }
 
     &__sinopsis{
-        margin: 2rem;
-        width: 100%;
+        width: 50%;
+        line-height: 1.5;
+        text-align: center;
+        animation: moveInRight 2s;
     }
+    
 }
 
 .film{
@@ -298,16 +367,60 @@ body{
     }
 
     &__video{
-
+        width:50rem;
+         height:30rem;
     }
 }
 
-.crew{
+.card{
     display: flex;
-    width: 100%;
-    height: 100%;
-    @include centerized-flex
+    width: 50%;
+    height: 50%;
+    @include centerized-flex;
+    flex-flow: column wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-around;
+
+    &__heading{
+        display: flex;
+        @include centerized-flex;
+        text-transform: uppercase;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -5rem;
+    }
+
+    &__picture{
+        display: flex;
+        @include centerized-flex;
+        margin : 0 2rem;
+    }
+
+    &__item{
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 1rem 2rem;
+        &--up{
+            
+        }
+
+        &--down{
+
+        }
+    }
+
+    &__desc{
+        display: flex;
+        flex-flow: column wrap;
+        line-height: 1.7;
+    }
 }
+
 
 .footer{
     display: flex;
@@ -318,4 +431,57 @@ body{
     height: 15vh;
     line-height: 1.5;
     position: relative;
+}
+
+@media only screen and (min-width: 1920px){
+    .header{
+
+        &__heading{
+            display: flex;
+            flex-flow: column nowrap;
+            position: relative;
+            height: 92vh;
+            color: white;
+            background-color: transparent;
+            @include centerized-flex;
+            text-transform: uppercase;
+            &--main{
+                letter-spacing: 20px;
+                font-weight: 900;
+                margin: 1rem;
+            }
+    
+            &--sub{
+                letter-spacing: 2rem;
+                font-weight: 300;
+                margin: 1rem;
+            }
+    
+            &--cast{
+                display: flex;
+                @include centerized-flex;
+            }
+        }
+    }
+
+    .film{
+        display: flex;
+        @include centerized-flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        &__heading{
+            text-transform: uppercase;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    
+        &__video{
+            width:50rem;
+             height:30rem;
+             transform: scale(1.5);
+        }
+    }
 }

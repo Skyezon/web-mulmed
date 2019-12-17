@@ -2,9 +2,9 @@ import React from 'react'
 
 function headings(){
     return(
-        <div className="header__heading">
-            <h1 className='header__heading--main'>nanti tulisan disini</h1>
-            <h2 className='header__heading--sub'>tapi ga tau mau tulis apa</h2>
+        <div className="header__heading" id='Home'>
+            <h1 className='header__heading--main'>Bawang putih dan bawang merah</h1>
+            <h2 className='header__heading--sub'>Alternate stories in a modern world</h2>
         </div>
     )
 }

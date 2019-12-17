@@ -10,19 +10,11 @@ const crew = () => {
     return(
         <section className="main__container">
 
-            <div className="crew">
+            
+            <div className="card" id="Crew">
+                <h4 className="card__heading">crew</h4>
             <CrewCard />
 
-                <div className="crew--up">
-                    <img id="juan" className="crew--up-img"/>
-                    <img id="nadhifa" className="crew--up-img"/>
-                    <img id="sheline" className="crew--up-img"/>
-                </div>
-                <div className='crew--low'>
-                    <img id="richard" className="crew--low-img"/>    
-                    <img id="bryan" className="crew--low-img"/>
-                    <img id="yesi" className="crew--low-img"/>
-                </div>
             </div>
         </section>
     )
